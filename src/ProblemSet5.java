@@ -26,7 +26,7 @@ public class ProblemSet5 {
       System.out.println(ps.isCentered("APCSA", "PCS"));
       System.out.println(ps.countMe("I am an example sentence", 'e'));
       System.out.println(ps.triplets("aaabbbccc"));
-      // System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
+      System.out.println(ps.addMe("123 abc 123"));
       // System.out.println(ps.sequence("Waaaaaaaaaaaaaaaaait, you know Jaaaaaaaaaaaaaaaaaaaake? Oh my goooooooooooooood!"));
       // System.out.println(ps.intertwine("I hswrsImgo.", "fti ok \' od"));
       // System.out.println(ps.isPalindrome("racecar"));
