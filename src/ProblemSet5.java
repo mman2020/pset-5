@@ -29,7 +29,7 @@ public class ProblemSet5 {
       System.out.println(ps.addMe("123 abc 123"));
       System.out.println(ps.sequence("abbcccdddd"));
       System.out.println(ps.intertwine("aceg", "bdfh"));
-      // System.out.println(ps.isPalindrome("racecar"));
+      System.out.println(ps.isPalindrome("racecar"));
     }
 
     /*
