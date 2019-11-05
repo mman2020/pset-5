@@ -227,17 +227,37 @@ public class ProblemSet5 {
        return longestSequence;
     }
 
-    // /*
-    //  * Exercise 9.
-    //  *
-    //  * Given two strings, return a new string built by intertwining each of the
-    //  * characters of a and b.
-    //  */
-    //
-    // public String intertwine(String a, String b) {
-    //
-    // }
-    //
+    /*
+     * Exercise 9.
+     *
+     * Given two strings, return a new string built by intertwining each of the
+     * characters of a and b.
+     */
+
+    public String intertwine(String a, String b) {
+      String longerString = "";
+      String shorterString = "";
+      String intertwinedString = "";
+      if (a != null && b != null) {
+        if (a.length() > b.length()) {
+          for (int i = 0; i <= a.length() - b.length(); i++) {
+            b += " ";
+          }
+        } else if (b.length() > a.length()) {
+          for (int i = 0; i < b.length() - a.length(); i++) {
+            a += " ";
+          }
+        }
+        for (int i = 0; i < a.length(); i++) {
+          intertwinedString += a.substring(i, i + 1);
+          intertwinedString += b.substring(i, i + 1);
+        }
+        return intertwinedString;
+      } else {
+        return null;
+      }
+    }
+
     // /*
     //  * Exercise 10.
     //  *
