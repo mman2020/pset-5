@@ -258,13 +258,25 @@ public class ProblemSet5 {
       }
     }
 
-    // /*
-    //  * Exercise 10.
-    //  *
-    //  * Given a string, determine whether or not it is a palindrome.
-    //  */
-    //
-    // public boolean isPalindrome(String text) {
-    //
-    // }
+    /*
+     * Exercise 10.
+     *
+     * Given a string, determine whether or not it is a palindrome.
+     */
+
+    public boolean isPalindrome(String text) {
+      String reversedText = "";
+      if (text != null) {
+        for (int i = text.length() - 1; i >= 0; i--) {
+          reversedText += text.charAt(i);
+        }
+        if (reversedText.equals(text)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
 }
