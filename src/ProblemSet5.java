@@ -20,8 +20,8 @@ public class ProblemSet5 {
 
     public static void main(String[] args) {
       ProblemSet5 ps = new ProblemSet5();
-      System.out.println(ps.surroundMe("C", "APSA"));
-      System.out.println(ps.endsMeet("Will's son", 3));
+      System.out.println(ps.surroundMe("ckeyMou", "Mise"));
+      System.out.println(ps.endsMeet("Kunay gFu", 3));
       System.out.println(ps.middleMan("APCSA"));
       System.out.println(ps.isCentered("APCSA", "PCS"));
       // System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
