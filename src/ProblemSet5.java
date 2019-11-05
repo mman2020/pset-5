@@ -191,16 +191,42 @@ public class ProblemSet5 {
     return digitSum;
     }
 
-    // /*
-    //  * Exercise 8.
-    //  *
-    //  * Given a string, compute the length of the longest sequence.
-    //  */
-    //
-    // public long sequence(String text) {
-    //
-    // }
-    //
+    /*
+     * Exercise 8.
+     *
+     * Given a string, compute the length of the longest sequence.
+     */
+
+    public long sequence(String text) {
+       long sequenceLength = 0;
+       long longestSequence = 0;
+       long lastSequence = 0;
+       String lastCharacter = "";
+       char sequenceCharacter = 'x';
+
+       if (text != null) {
+         for (int i = 0; i < text.length(); i++) {
+           sequenceCharacter = text.charAt(i);
+           while (sequenceCharacter == text.charAt(i) && i < text.length() - 1) {
+             sequenceLength++;
+             i++;
+             lastCharacter = String.valueOf(text.charAt(i));
+           }
+           if (sequenceLength > longestSequence) {
+             longestSequence = sequenceLength;
+           }
+           lastSequence = sequenceLength;
+           sequenceLength = 0;
+         }
+         if (text.charAt(text.length() - 1) == sequenceCharacter && lastSequence == longestSequence && lastCharacter.equals(String.valueOf(text.charAt(text.length() - 1)))) {
+           longestSequence++;
+         }
+       } else {
+         longestSequence = -1;
+       }
+       return longestSequence;
+    }
+
     // /*
     //  * Exercise 9.
     //  *
