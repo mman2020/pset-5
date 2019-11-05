@@ -22,9 +22,9 @@ public class ProblemSet5 {
       ProblemSet5 ps = new ProblemSet5();
       System.out.println(ps.surroundMe("ckeyMou", "Mise"));
       System.out.println(ps.endsMeet("Kunay gFu", 3));
-      System.out.println(ps.middleMan("APCSA"));
+      System.out.println(ps.middleMan("Nooplsyes"));
       System.out.println(ps.isCentered("APCSA", "PCS"));
-      // System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
+      System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
       // System.out.println(ps.triplets("aaa SSS ddD ZZz"));
       // System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
       // System.out.println(ps.sequence("Waaaaaaaaaaaaaaaaait, you know Jaaaaaaaaaaaaaaaaaaaake? Oh my goooooooooooooood!"));
@@ -111,16 +111,35 @@ public class ProblemSet5 {
       }
     }
 
-    // /*
-    //  * Exercise 5.
-    //  *
-    //  * Given a string and a character, compute the number of words that end in suffix.
-    //  */
-    //
-    // public int countMe(String text, char suffix) {
-    //
-    // }
-    //
+    /*
+     * Exercise 5.
+     *
+     * Given a string and a character, compute the number of words that end in suffix.
+     */
+
+    public int countMe(String text, char suffix) {
+      int numWords = 0;
+  
+      if (!text.equals(null) && ((suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z'))) {
+        boolean firstWord = true;
+        boolean newWord;
+        for (int i = 0; i < text.length(); i++) {
+          if (text.charAt(i) == ' ') {
+            if(text.charAt(i - 1) == suffix) {
+              numWords++;
+            }
+          } else if (i == text.length() - 1) {
+            if (text.charAt(i - 1) == suffix) {
+              numWords++;
+            }
+          }
+        }
+      } else {
+        numWords = -1;
+      }
+      return numWords;
+    }
+
     // /*
     //  * Exercise 6.
     //  *
