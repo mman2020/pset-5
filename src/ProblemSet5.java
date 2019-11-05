@@ -19,7 +19,17 @@
 public class ProblemSet5 {
 
     public static void main(String[] args) {
-
+      ProblemSet5 ps = new ProblemSet5();
+      System.out.println(ps.surroundMe("C", "APSA"));
+      System.out.println(ps.endsMeet("Will's son", 3));
+      System.out.println(ps.middleMan("APCSA"));
+      System.out.println(ps.isCentered("APCSA", "PCS"));
+      // System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
+      // System.out.println(ps.triplets("aaa SSS ddD ZZz"));
+      // System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
+      // System.out.println(ps.sequence("Waaaaaaaaaaaaaaaaait, you know Jaaaaaaaaaaaaaaaaaaaake? Oh my goooooooooooooood!"));
+      // System.out.println(ps.intertwine("I hswrsImgo.", "fti ok \' od"));
+      // System.out.println(ps.isPalindrome("racecar"));
     }
 
     /*
