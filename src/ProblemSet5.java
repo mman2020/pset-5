@@ -68,11 +68,18 @@ public class ProblemSet5 {
      * Given a string, return a new string using the middle three characters of text.
      */
 
-    // public String middleMan(String text) {
-    //
-    // }
-    //
-    // /*
+    public String middleMan(String text) {
+      if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3) {
+        int startingPoint = (text.length() - 3) / 2;
+        String middleString = text.substring(startingPoint, startingPoint + 3);
+
+        return middleString;
+      } else {
+        return text;
+      }
+    }
+    
+    /*
     //  * Exercise 4.
     //  *
     //  * Given two strings, determine whether or not target is equivalent to the middle
