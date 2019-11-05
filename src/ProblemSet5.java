@@ -78,18 +78,29 @@ public class ProblemSet5 {
         return text;
       }
     }
-    
+
     /*
-    //  * Exercise 4.
-    //  *
-    //  * Given two strings, determine whether or not target is equivalent to the middle
-    //  * three characters of text.
-    //  */
-    //
-    // public boolean isCentered(String text, String target) {
-    //
-    // }
-    //
+     * Exercise 4.
+     *
+     * Given two strings, determine whether or not target is equivalent to the middle
+     * three characters of text.
+     */
+
+    public boolean isCentered(String text, String target) {
+      if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3 && !target.equals(null) && target.length() == 3) {
+        int startingPoint = (text.length() - 3) / 2;
+        String middleString = text.substring(startingPoint, startingPoint + 3);
+
+        if (middleString.equals(target)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+
     // /*
     //  * Exercise 5.
     //  *
