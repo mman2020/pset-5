@@ -24,8 +24,8 @@ public class ProblemSet5 {
       System.out.println(ps.endsMeet("Kunay gFu", 3));
       System.out.println(ps.middleMan("Nooplsyes"));
       System.out.println(ps.isCentered("APCSA", "PCS"));
-      System.out.println(ps.countMe("Jared had a rough lad by the name of Donald.", 'd'));
-      // System.out.println(ps.triplets("aaa SSS ddD ZZz"));
+      System.out.println(ps.countMe("I am an example sentence", 'e'));
+      System.out.println(ps.triplets("aaabbbccc"));
       // System.out.println(ps.addMe("Why was 6 scared of 7? Because 789."));
       // System.out.println(ps.sequence("Waaaaaaaaaaaaaaaaait, you know Jaaaaaaaaaaaaaaaaaaaake? Oh my goooooooooooooood!"));
       // System.out.println(ps.intertwine("I hswrsImgo.", "fti ok \' od"));
@@ -41,10 +41,10 @@ public class ProblemSet5 {
 
     public String surroundMe(String in, String out) {
       if (!in.equals(null) & !out.equals(null) && out.length() == 4) {
-        String outHalf1 = out.substring(0, 2);
-        String outHalf2 = out.substring(2);
-        String rearrangedString = outHalf1 + in + outHalf2;
-        return rearrangedString;
+        String firstHalf = out.substring(0, 2);
+        String lastHalf = out.substring(2);
+        String combinedString = firstHalf + in + lastHalf;
+        return combinedString;
       } else {
         return in;
       }
@@ -58,15 +58,15 @@ public class ProblemSet5 {
      */
 
     public String endsMeet(String text, int n) {
-      String firstNCharacters;
-      String lastNCharacters;
-      String firstAndLastNCharacters;
+      String firstPart;
+      String lastPart;
+      String firstLastPart;
       if (1 <= text.length() && text.length() <= 10 && 1 <= n && n <= text.length()) {
-        firstNCharacters = text.substring(0, n);
-        lastNCharacters = text.substring(text.length() - n);
-        firstAndLastNCharacters = firstNCharacters + lastNCharacters;
+        firstPart = text.substring(0, n);
+        lastPart = text.substring(text.length() - n);
+        firstLastPart = firstPart + lastPart;
 
-        return firstAndLastNCharacters;
+        return firstLastPart;
       } else {
         return text;
       }
@@ -80,8 +80,8 @@ public class ProblemSet5 {
 
     public String middleMan(String text) {
       if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3) {
-        int startingPoint = (text.length() - 3) / 2;
-        String middleString = text.substring(startingPoint, startingPoint + 3);
+        int startingString = (text.length() - 3) / 2;
+        String middleString = text.substring(startingString, startingString + 3);
 
         return middleString;
       } else {
@@ -98,8 +98,8 @@ public class ProblemSet5 {
 
     public boolean isCentered(String text, String target) {
       if (!text.equals(null) && text.length() % 2 == 1 && text.length() >= 3 && !target.equals(null) && target.length() == 3) {
-        int startingPoint = (text.length() - 3) / 2;
-        String middleString = text.substring(startingPoint, startingPoint + 3);
+        int startingString = (text.length() - 3) / 2;
+        String middleString = text.substring(startingString, startingString + 3);
 
         if (middleString.equals(target)) {
           return true;
@@ -119,7 +119,7 @@ public class ProblemSet5 {
 
     public int countMe(String text, char suffix) {
       int numWords = 0;
-  
+
       if (!text.equals(null) && ((suffix >= 'a' && suffix <= 'z') || (suffix >= 'A' && suffix <= 'Z'))) {
         boolean firstWord = true;
         boolean newWord;
@@ -140,26 +140,57 @@ public class ProblemSet5 {
       return numWords;
     }
 
-    // /*
-    //  * Exercise 6.
-    //  *
-    //  * Given a string, compute the number of triplets in text.
-    //  */
-    //
-    // public int triplets(String text) {
-    //
-    // }
-    //
-    // /*
-    //  * Exercise 7.
-    //  *
-    //  * Given a string, compute the sum of the digits in text.
-    //  */
-    //
-    // public long addMe(String text) {
-    //
-    // }
-    //
+    /*
+     * Exercise 6.
+     *
+     * Given a string, compute the number of triplets in text.
+     */
+
+    public int triplets(String text) {
+      int numTriplets = 0;
+
+      if (text != null) {
+        for (char tripletLetter = 'a'; tripletLetter <= 'z'; tripletLetter++) {
+          for (int i = 0; i < text.length() - 2; i++) {
+            if (text.charAt(i) == tripletLetter && text.charAt(i + 1) == tripletLetter && text.charAt(i + 2) == tripletLetter) {
+              numTriplets++;
+            }
+          }
+        }
+        for (char tripletLetter = 'A'; tripletLetter <= 'Z'; tripletLetter++) {
+          for (int i = 0; i < text.length() - 2; i++) {
+            if (text.charAt(i) == tripletLetter && text.charAt(i + 1) == tripletLetter && text.charAt(i + 2) == tripletLetter) {
+              numTriplets++;
+            }
+          }
+        }
+      } else {
+        numTriplets = -1;
+      }
+      return numTriplets;
+    }
+
+    /*
+     * Exercise 7.
+     *
+     * Given a string, compute the sum of the digits in text.
+     */
+
+    public long addMe(String text) {
+      int digitSum = 0;
+
+    if (text != null) {
+      for (int i = 0; i < text.length(); i++) {
+        if (Character.isDigit(text.charAt(i))) {
+          digitSum = digitSum + (Character.getNumericValue(text.charAt(i)));
+        }
+      }
+    } else {
+      digitSum = -1;
+    }
+    return digitSum;
+    }
+
     // /*
     //  * Exercise 8.
     //  *
